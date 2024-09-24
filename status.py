@@ -50,7 +50,7 @@ async def redirector(request, handler):
 		raise web.HTTPFound(location="/")
 
 
-routes.static("/", "html")
+routes.static("/", "Status/html")
 app = web.Application(middlewares=[redirector])
 app.logger.manager.disable = 100 * config.get("misc", "debug")
 app.add_routes(routes)
