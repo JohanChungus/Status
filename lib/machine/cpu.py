@@ -139,17 +139,11 @@ def get_stat():
 
 
 def find_cpu_thermal():
-	location = "/sys/class/hwmon"
-
-	for sensor in ls(location):
-		name = get(path(sensor, "name"))
-		if name not in cpu_thermals:
-			continue
-
-		return {
-			"location": sensor,
-			"name": name
-		}
+    # Bypass thermal detection and return dummy values because my vps cant show the thermal :(
+    return {
+        "location": "dummy_location",
+        "name": "dummy_thermal_sensor"
+			}
 
 
 def cpu_freq_helper(cpu_path: str, type: str):
