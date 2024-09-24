@@ -26,7 +26,7 @@ routes = web.RouteTableDef()
 
 @routes.get("/")
 async def index(request):
-	return web.FileResponse("html/index.html")
+	return web.FileResponse("Status/html/index.html")
 
 
 @routes.get("/api/status")
